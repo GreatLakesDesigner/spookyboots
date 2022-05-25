@@ -153,6 +153,22 @@ $(function () {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(function () {
   "use strict";
   if ($('[data-wm-plugin="mainnav"]').length) {
@@ -183,12 +199,12 @@ $(function () {
         $("body").addClass("tweak-sticky-mainnav");
       }
       downArrowSvg =
-        '<div class="secondary-nav-dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title" aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Angle Down</title><desc>A line styled icon from Orion Icon Library.</desc><path data-name="layer1"fill="none" stroke="#202020" stroke-miterlimit="10" stroke-width="2" d="M20 26l11.994 14L44 26"stroke-linejoin="round" stroke-linecap="round"></path></svg></div>';
+        '<div class="main-nav-dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title" aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Angle Down</title><desc>A line styled icon from Orion Icon Library.</desc><path data-name="layer1"fill="none" stroke="#202020" stroke-miterlimit="10" stroke-width="2" d="M20 26l11.994 14L44 26"stroke-linejoin="round" stroke-linecap="round"></path></svg></div>';
       $("body").addClass("wm-mainnav-active");
       $(thisObj.mainNav).addClass("cloned-mainnav");
       $(thisObj.mainNav).wrapInner('<nav class="header-nav-wrapper"></nav>');
-      $('a[href="/secondary-nav"]').parent().addClass("hide-link");
-      links = $('.header-nav-folder-title[href="/secondary-nav"]')
+      $('a[href="/main-nav"]').parent().addClass("hide-link");
+      links = $('.header-nav-folder-title[href="/main-nav"]')
         .first()
         .next();
       $(links)
@@ -214,30 +230,30 @@ $(function () {
       thisObj.mainNavMobile = $(mainNav).clone();
       $(thisObj.mainNavMobile).attr("id", "");
       $(downArrowSvg).insertAfter($("#wm-mainnav a:not(.cta):last").parent());
-      dropdownNav = '<div class="secondary-nav-dropdown"></div>';
+      dropdownNav = '<div class="main-nav-dropdown"></div>';
       $("#wm-mainnav").append(dropdownNav);
       $("#wm-mainnav .header-nav-wrapper a:not(.cta)")
         .parent()
         .each(function () {
           let clonedLink = $(this).clone();
-          $(".secondary-nav-dropdown").append(clonedLink);
+          $(".main-nav-dropdown").append(clonedLink);
         });
       $('[data-folder="root"] > .header-menu-nav-folder-content').append(
         $(thisObj.mainNavMobile)
       );
       $(thisObj.mainNavMobile).addClass("mobile-mainnav");
-      $(".secondary-nav-dropdown-icon").on("click", function () {
-        if ($(".secondary-nav-dropdown.open-dropdown").length) {
+      $(".main-nav-dropdown-icon").on("click", function () {
+        if ($(".main-nav-dropdown.open-dropdown").length) {
           closeSecondaryNavDropdown();
         } else {
           openSecondaryNavDropdown();
         }
       });
       function closeSecondaryNavDropdown() {
-        $(".secondary-nav-dropdown").removeClass("open-dropdown");
+        $(".main-nav-dropdown").removeClass("open-dropdown");
       }
       function openSecondaryNavDropdown() {
-        $(".secondary-nav-dropdown").addClass("open-dropdown");
+        $(".main-nav-dropdown").addClass("open-dropdown");
       }
       if (mainNavPos === "top-right") {
         $("#header .header-announcement-bar-wrapper").prepend(
@@ -300,7 +316,7 @@ $(function () {
         }, 150);
       });
       window.dispatchEvent(new Event("resize"));
-      $("#wm-mainnav").addClass("secondary-nav-loaded");
+      $("#wm-mainnav").addClass("main-nav-loaded");
     }
     let mainNav = $('[data-wm-plugin="mainnav"]').first();
     $(mainNav).css({ display: "none" });
