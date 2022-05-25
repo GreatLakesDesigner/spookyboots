@@ -149,10 +149,12 @@ body.header--menu-open #wm-subnav {
 
 
 
+
 #wm-mainnav {
-  display: block !important;
+  position: absolute;
+  top: 100%;
+  text-align: center;
   width: 100%;
-  position: relative;
   height: auto;
   box-sizing: border-box;
   padding: 17px;
