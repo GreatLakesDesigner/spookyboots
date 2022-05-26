@@ -152,12 +152,12 @@ body.header--menu-open #wm-subnav {
 
 #wm-mainnav {
   position: absolute;
-  top: 100%;
+  top: 80%;
   text-align: center;
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  padding: 17px;
+  padding: 100px;
   padding-left: var(--headerPaddingLeft);
   padding-right: var(--headerPaddingRight);
   transition: all 0.1s ease-out;
