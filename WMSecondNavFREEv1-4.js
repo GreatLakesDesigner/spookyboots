@@ -178,7 +178,7 @@ $(function () {
     function MainNavBlock(mainNav) {
       let thisObj = this;
       thisObj.mainNav = $(mainNav);
-      let mainHeader = $(".header .header-announcement-bar-wrapper")[0],
+      let mainHeader = $("#footer-sections")[0],
         linkSetup = $(thisObj.mainNav).attr("data-nav-setup"),
         mainNavPos = $(thisObj.mainNav).attr("data-position"),
         isSticky = $(thisObj.mainNav).attr("data-sticky"),
@@ -256,7 +256,7 @@ $(function () {
         $(".main-nav-dropdown").addClass("open-dropdown");
       }
       if (mainNavPos === "top-right") {
-        $("#header .header-announcement-bar-wrapper").prepend(
+        $("#footer-sections").prepend(
           $(thisObj.mainNav)
         );
         $(thisObj.mainNav)
@@ -264,7 +264,7 @@ $(function () {
           .css({ "justify-content": "flex-end" });
         $("body").addClass("tweak-mainnav-position-top");
       } else if (mainNavPos === "top-left") {
-        $("#header .header-announcement-bar-wrapper").prepend(
+        $("footer-sections").prepend(
           $(thisObj.mainNav)
         );
         $(thisObj.mainNav)
@@ -272,7 +272,7 @@ $(function () {
           .css({ "justify-content": "flex-start" });
         $("body").addClass("tweak-mainnav-position-top");
       } else {
-        $("#header .header-announcement-bar-wrapper").prepend(
+        $("footer-sections").prepend(
           $(thisObj.mainNav)
         );
         $(thisObj.mainNav)
@@ -288,19 +288,19 @@ $(function () {
         }
       });
       function resizePadding() {
-        headerPaddingLeft = $("#header .header-announcement-bar-wrapper").css(
+        headerPaddingLeft = $("#footer-sections").css(
           "padding-left"
         );
-        headerPaddingRight = $("#header .header-announcement-bar-wrapper").css(
+        headerPaddingRight = $("#footer-sections").css(
           "padding-right"
         );
-        headerPaddingTop = $("#header .header-announcement-bar-wrapper").css(
+        headerPaddingTop = $("#footer-sections").css(
           "padding-top"
         );
-        headerPaddingBottom = $("#header .header-announcement-bar-wrapper").css(
+        headerPaddingBottom = $("#footer-sections").css(
           "padding-bottom"
         );
-        mainHeaderHeight = $("#header .header-inner").outerHeight();
+        mainHeaderHeight = $("#footer-sections").outerHeight();
         subHeaderHeight = $("#wm-mainnav").outerHeight();
         $(":root").css("--headerPaddingLeft", headerPaddingLeft);
         $(":root").css("--headerPaddingRight", headerPaddingRight);
